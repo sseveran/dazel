@@ -1,11 +1,10 @@
 FROM debian:9.9-slim
 MAINTAINER Nadir Izrael nadir.izr@gmail.com
 
-ENV BAZEL_VERSION 0.28.0
+ENV BAZEL_VERSION 0.28.1
 
 # Creating the man pages directory to deal with the slim variants not having it.
-RUN mkdir -p /usr/share/man/man1 \
- && apt-get update && apt-get install -y --no-install-recommends ca-certificates curl gnupg \
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl gnupg \
  && echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" > \
          /etc/apt/sources.list.d/bazel.list \
  && curl https://bazel.build/bazel-release.pub.gpg | apt-key add - \

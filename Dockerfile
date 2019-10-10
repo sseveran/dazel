@@ -1,7 +1,7 @@
-FROM debian:9.9-slim
+FROM debian:9.11-slim
 MAINTAINER Nadir Izrael nadir.izr@gmail.com
 
-ENV BAZEL_VERSION 0.28.1
+ENV BAZEL_VERSION 1.0.0
 
 # Creating the man pages directory to deal with the slim variants not having it.
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl gnupg \
